@@ -18,7 +18,6 @@ export const verify = (token: string) => {
     const decoded = jwt.verify(token, jwtConfig.secret);
     return { valid: true, expired: false, decoded };
   } catch (error) {
-    console.log("token", token, { error });
     let msg;
     if (error instanceof Error) {
       msg = error.message;
